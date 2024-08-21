@@ -10,3 +10,25 @@ Having studied machine learning in various ways and completed a few guided proje
 Here I explore how machine learning can be used to classify quantum states/ electron orbitals about the hydrogen atom. First of all, within the file electron-orbitals.ipynb I construct a couple of functions which come together to plot a 2-D cross section of the probability density of an electrons orbit about the hydrogen nucleus (explained below). The code saves this as an image (.png) for use later. The file electron-orbital-classification.ipynb is where i construct my ML model.
 
 The images are loaded into the file and the quantum data (n, l and m) is extracted from the filename of each image. This training data is then labelled before we use TensorFlow to build the model. After the models construction it is trained over 200 epochs before it takes the input of an image, created using electron-orbitals.ipynb. The model then makes a prediction of the principle quantum number of the input.
+
+## Notes
+
+Model accuracy could  be impeded by the quality of the training data set. The images may not be dinstinctly different enough between states, and often look similar e.g. [n, 0, 0] states and [3, 2, 2], [4, 2, 2], [5, 2, 2] etc:
+
+<p align="center">
+  <img src="training-data/1_0_0.png" alt="Image 1" width="200"/>
+  <img src="training-data/3_0_0.png" alt="Image 2" width="200"/>
+  <img src="training-data/5_0_0.png" alt="Image 3" width="200"/>
+</p>
+<p align = "center">
+<i>Electron density plot for [n, 0, 0] quantum states</i>
+</p> 
+<p align="center">
+  <img src="training-data/3_2_2.png" alt="Image 1" width="200"/>
+  <img src="training-data/4_2_2.png" alt="Image 2" width="200"/>
+  <img src="training-data/5_2_2.png" alt="Image 3" width="200"/>
+</p>
+
+<p align = "center">
+<i>Electron density plot for [(3,4,5), 2, 2] quantum states</i>
+</p> 
