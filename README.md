@@ -13,6 +13,11 @@ The images are loaded into the file and the quantum data (n, l and m) is extract
 
 ## Notes
 
+The model in this form did not end up being very accurate, not even being able to classify orbital states within its own training set, let alone states outside. This could be for a variety of reasons:
+
+- Training data quality: the training data set is very small, filled with very similar images at varying levels of zoom, confusing the model.
+- Model architecture: the model used an overly complex architecture for the task, with no physics-informed input.
+
 Model accuracy could  be impeded by the quality of the training data set. The images may not be dinstinctly different enough between states, and often look similar e.g. [n, 0, 0] states and [3, 2, 2], [4, 2, 2], [5, 2, 2] etc:
 
 <p align="center">
